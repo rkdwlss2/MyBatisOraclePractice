@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.devandy.MyBatisOraclePractice.service.MemberService;
 import com.devandy.MyBatisOraclePractice.vo.MemberVO;
 
+import java.util.Date;
+
 @Controller
 public class MemberController{
 
@@ -21,4 +23,15 @@ public class MemberController{
         List<MemberVO> allMembers = memberService.selectAllMembers();
         return allMembers;
     }
+
+    @GetMapping("/api/hello")
+    public @ResponseBody String hello(){
+        return "안녕하세요. 현재 서버시간은 "+new Date() +"입니다. \n";
+    }
+
+    @GetMapping("/")
+    public String main() {
+        return "helloJsp";
+    }
+
 }
