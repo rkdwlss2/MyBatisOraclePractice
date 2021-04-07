@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
 
 import com.devandy.MyBatisOraclePractice.service.MemberService;
 import com.devandy.MyBatisOraclePractice.vo.MemberVO;
@@ -24,10 +26,6 @@ public class MemberController{
         return allMembers;
     }
 
-    @GetMapping("/api/hello")
-    public @ResponseBody String hello(){
-        return "안녕하세요. 현재 서버시간은 "+new Date() +"입니다. \n";
-    }
 
     @GetMapping("/")
     public String main() {
@@ -35,3 +33,5 @@ public class MemberController{
     }
 
 }
+
+
